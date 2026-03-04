@@ -1,0 +1,26 @@
+{
+  "name": "kimi-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that delegates tasks to kimi-cli, enabling AI-to-AI orchestration from Claude Code.",
+  "type": "module",
+  "main": "server.mjs",
+  "bin": {
+    "kimi-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "kimi",
+    "kimi-cli",
+    "claude-code",
+    "ai-orchestration",
+    "model-context-protocol"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1"
+  }
+}
