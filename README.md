@@ -19,32 +19,45 @@ Claude plans the work, breaks it into sub-tasks, and delegates implementation to
 
 ## Setup
 
-### 1. Install dependencies
+### Option A: npx (recommended)
+
+Add to `~/.claude/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "kimi": {
+      "command": "npx",
+      "args": ["-y", "kimi-code-mcp@latest"]
+    }
+  }
+}
+```
+
+Restart Claude Code. Done — no cloning or local install needed.
+
+### Option B: Manual (from source)
 
 ```bash
-git clone <this-repo>
-cd kimi-mcp
+git clone https://github.com/DevvGwardo/kimi-delegate.git
+cd kimi-delegate
 npm install
 ```
 
-### 2. Add to Claude Code settings
-
-Add to `~/.claude/settings.json`:
+Add to `~/.claude/mcp.json`:
 
 ```json
 {
   "mcpServers": {
     "kimi": {
       "command": "node",
-      "args": ["/absolute/path/to/kimi-mcp/server.mjs"]
+      "args": ["/absolute/path/to/kimi-delegate/server.mjs"]
     }
   }
 }
 ```
 
-### 3. Restart Claude Code
-
-The `kimi_delegate` and `kimi_research` tools will now be available.
+Restart Claude Code. The `kimi_delegate` and `kimi_research` tools will now be available.
 
 ## How it works
 
